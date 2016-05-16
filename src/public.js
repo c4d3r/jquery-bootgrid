@@ -26,6 +26,7 @@ var Grid = function(element, options)
     this.rowCount = ($.isArray(rowCount)) ? rowCount[0] : rowCount;
     this.rows = [];
     this.searchPhrase = "";
+    this.searchColumns = [];
     this.selectedRows = [];
     this.sortDictionary = {};
     this.total = 0;
@@ -854,3 +855,23 @@ Grid.prototype.getTotalRowCount = function()
 {
     return this.total;
 };
+
+/**
+ * Adds a column to seasrch on
+ * @param column
+ * @returns {boolean}
+ */
+Grid.prototype.addSearchColumn = function(column) {
+    this.searchColumns.push(column);
+    return true;
+}
+
+/**
+ * Set search column (single one)
+ * @param column
+ * @returns {boolean}
+ */
+Grid.prototype.setSearchColumn = function(column) {
+    this.searchColumns = [];
+    return this.addSearchColumn(column);
+}

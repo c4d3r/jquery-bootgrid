@@ -43,7 +43,8 @@ function getRequest()
             current: this.current,
             rowCount: this.rowCount,
             sort: this.sortDictionary,
-            searchPhrase: this.searchPhrase
+            searchPhrase: this.searchPhrase,
+            searchColumns: this.searchColumns
         },
         post = this.options.post;
 
